@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tailwind:build": "npx tailwindcss -i ./src/input.css -o ./dist/main.css",
+    "tailwind:watch": "npx tailwindcss -i ./src/input.css -o ./dist/main.css --watch"
   },
   "author": "Max Evans",
   "license": "ISC",
