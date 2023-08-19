@@ -1,5 +1,9 @@
 "use strict"
 
+document.getElementById('back-btn').addEventListener('click', () => {
+  window.history.back()
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const validationMessage = document.getElementById('validationMessage');
   const proceedBtn = document.getElementById('proceedBtn');
@@ -38,22 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function caluclateScore() {
-  let d_score = 0;
+  let a_score = 0;
 
   const inputs = document.querySelectorAll('input[type="radio"]')
   inputs.forEach((input) => {
     if (input.checked) {
-      d_score += parseInt(input.value)
+      a_score += parseInt(input.value)
     }
   })
 
+  localStorage.setItem('a_score', a_score);
 
-
-  console.log(d_score)
-
-  localStorage.setItem('d_score', d_score);
-
-  window.location.href = 'a_test.html'
+  const d_score = localStorage.getItem('d_score')
+  window.location.href = `results.html?d=${d_score}&a=${a_score}`
 }
-
-
