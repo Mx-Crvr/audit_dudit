@@ -12,14 +12,25 @@
     <img src="../src/imgs/pex-logo.webp" alt="PEx Logo">
   </header>
 
-  <main class="max-w-5xl mx-auto text-xl my-12">
+  <main class="max-w-5xl mx-auto text-xl my-12 flex flex-col gap-12">
     <div class="container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col gap-5">
       <h1 class="text-3xl font-semibold text-center">Results</h1>
       <div class="results flex justify-center items-center gap-24">
         <p>DUDIT Score: <span id="d_score" class="font-semibold text-2xl ml-2"></span></p>
         <p>AUDIT Score: <span id="a_score" class="font-semibold text-2xl ml-2"></span></p>  
       </div>
-      
+    </div>
+
+    <div class="container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col gap-5">
+      <form action="/" method="POST" class="flex flex-col gap-5">
+        <h2 class="text-2xl font-semibold text-center">Get in Touch</h2>
+        <div class="details flex items-center w-full gap-5">
+          <input type="text" name="full_name" id="full_name" placeholder="Full name" class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2">
+          <input type="email" name="email_address" id="email_address" placeholder="Email address" class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2">
+        </div>
+        <input type="text" name="message" id="message" placeholder="Message..." class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2">
+        <button type="submit" class="text-[#fff] text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-1/2 mt-5">Send</button>
+      </form>
     </div>
   </main>
 </body>
