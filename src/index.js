@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config()
 const app = express();
-// const urlParams = new URLSearchParams(window.location.search);
+const Airtable = require('airtable');
+var base = new Airtable({apiKey: `${process.env.TOKEN}`}).base(`${process.env.BASE}`);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -14,19 +15,31 @@ app.get('/', (req, res) => {
 })
 
 app.post('/form', (req, res) => {
-  // const d_score = localStorage.getItem('d_score')
-  // const a_score = localStorage.getItem('a_score')
-  const fullName = req.body.full_name;
-  const emailAddress = req.body.email_address;
-  const message = req.body.message;
-  const duditScore = req.body.dudit_score;
-  const auditScore = req.body.audit_score;
+  base(`${process.env.TABLE}`).create([
+    {
+      "fields": {
+        "Full name": `${req.body.full_name}`,
+        "Email address": `${req.body.email_address}`,
+        "Message": `${req.body.message}`,
+        "DUDIT Score": `${req.body.dudit_score}`,
+        "AUDIT Score": `${req.body.audit_score}`
+      }
+    },
+  ], function(err, records) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    records.forEach(function (record) {
+      console.log(record.getId());
+    });
+  });
 
-  console.log(`Fullname: ${fullName}`);
-  console.log(`Email: ${emailAddress}`);
-  console.log(`Message: ${message}`);
-  console.log(`DUDIT Score: ${duditScore}`);
-  console.log(`AUDIT Score: ${auditScore}`);
+  console.log(`Fullname: ${req.body.full_name}`);
+  console.log(`Email: ${req.body.email_address}`);
+  console.log(`Message: ${req.body.message}`);
+  console.log(`DUDIT Score: ${req.body.dudit_score}`);
+  console.log(`AUDIT Score: ${req.body.audit_score}`);
 
   res.sendFile(path.join(__dirname, '../dist/thankyou.html'))
 });
