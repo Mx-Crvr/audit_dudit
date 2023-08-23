@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-require('dotenv').config()
+require('dotenv').config();
 const app = express();
 const Airtable = require('airtable');
-var base = new Airtable({apiKey: `${process.env.TOKEN}`}).base(`${process.env.BASE}`);
+var base = new Airtable({apiKey: `patE4sOffV7KFAwkv.95262460d74496f4d152921d3c66562d9983126cfa39a32ac105c526a2356ada`}).base(`appuiDCX4ee5hA3tY`);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/form', (req, res) => {
-  base(`${process.env.TABLE}`).create([
+  
+  base(`Log`).create([
     {
       "fields": {
         "Full name": `${req.body.full_name}`,
@@ -35,7 +36,7 @@ app.post('/form', (req, res) => {
     });
   });
 
-  console.log(`Fullname: ${req.body.full_name}`);
+  console.log(`Full name: ${req.body.full_name}`);
   console.log(`Email: ${req.body.email_address}`);
   console.log(`Message: ${req.body.message}`);
   console.log(`DUDIT Score: ${req.body.dudit_score}`);
@@ -44,7 +45,7 @@ app.post('/form', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/thankyou.html'))
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server listening on ${process.env.PORT}: http://localhost:${process.env.PORT}`)
+app.listen(3000, () => {
+  console.log(`Server listening on 3000: http://localhost:3000`)
 })
 
