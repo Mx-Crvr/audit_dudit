@@ -1,5 +1,16 @@
 "use strict"
 
+const inputs = document.querySelectorAll('input[type="radio"]:checked');
+const questions = document.querySelectorAll('.question');
+console.log(inputs)
+fetch('/get_answers', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ inputs })
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   const validationMessage = document.getElementById('validationMessage');
   const proceedBtn = document.getElementById('proceedBtn');

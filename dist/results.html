@@ -16,8 +16,15 @@
     <div class="container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col gap-5">
       <h1 class="text-3xl font-semibold text-center">Results</h1>
       <div class="results flex justify-center items-center gap-24">
-        <p>DUDIT Score: <span id="d_score" class="font-semibold text-2xl ml-2"></span></p>
-        <p>AUDIT Score: <span id="a_score" class="font-semibold text-2xl ml-2"></span></p>  
+        <div class="items">
+          <p class="font-bold text-2xl mb-5">DUDIT Score: <span id="d_score" class="font-semibold text-2xl ml-2"></span></p>
+          <p id="d_result" class="w-3/4"></p>
+        </div>
+        <div class="items">
+          <p class="font-bold text-2xl mb-5">AUDIT Score: <span id="a_score" class="font-semibold text-2xl ml-2"></span></p> 
+          <p id="a_result" class="w-3/4"></p>
+        </div>
+        
       </div>
     </div>
 
@@ -25,10 +32,25 @@
       <form action="/form" method="POST" class="flex flex-col gap-5">
         <h2 class="text-2xl font-semibold text-center">Get in Touch</h2>
         <div class="details flex items-center w-full gap-5">
-          <input type="text" name="full_name" id="full_name" placeholder="Full name" class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2">
-          <input type="email" name="email_address" id="email_address" placeholder="Email address" class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2">
+          <input type="text" name="full_name" id="full_name" placeholder="Full name" class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2" required>
+          <input type="email" name="email_address" id="email_address" placeholder="Email address" class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2" required>
         </div>
-        <input type="text" name="message" id="message" placeholder="Message..." class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-1/2">
+        <div class="details flex flex-col justify-center w-full gap-5">
+          <input type="text" name="message" id="message" placeholder="Message..." class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-full">
+          <div class=" flex gap-5 w-1/2">
+            <div class="flex items-center gap-2">
+              <input type="radio" name="gender" id="male" class="w-5 h-5">
+              <label for="male" class="cursor-pointer text-md">Male</label>
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="radio" name="gender" id="female" class="w-5 h-5">
+              <label for="female" class="cursor-pointer text-md">Female</label>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs -mt-4 text-[#94a3b8] font-semibold underline">Why do we need this information?</p>
+
+        
         <input type="text" name="dudit_score" value="" id="dudit" class="hidden">
         <input type="text" name="audit_score" value="" id="audit" class="hidden">
         <button type="submit" class="text-[#fff] text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-1/2 mt-5">Send</button>
