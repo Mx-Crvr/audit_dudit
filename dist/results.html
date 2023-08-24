@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Results DUDIT & AUDIT</title>
+  <!-- Tippy -->
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
   <link rel="stylesheet" href="./main.css">
   <script src="./test_logic/results.js" defer></script>
 </head>
 <body class="bg-white text-black">
   <header class="max-w-5xl mx-auto">
-    <img src="../imgs/pex-logo.webp" alt="PEx Logo">
+    <img src="../dist/imgs/pex-logo.webp" alt="PEx Logo">
   </header>
 
   <main class="max-w-5xl mx-auto text-xl my-12 flex flex-col gap-12">
@@ -38,24 +40,34 @@
         <div class="details flex flex-col justify-center w-full gap-5">
           <input type="text" name="message" id="message" placeholder="Message..." class="border border-gray p-2 rounded-lg outline-none focus:border-blue w-full">
           <div class=" flex gap-5 w-1/2">
-            <div class="flex items-center gap-2">
-              <input type="radio" name="gender" id="male" class="w-5 h-5">
+            <div class="gender flex items-center gap-2">
+              <input type="radio" name="gender" id="male" value="male" class="w-5 h-5">
               <label for="male" class="cursor-pointer text-md">Male</label>
             </div>
-            <div class="flex items-center gap-2">
-              <input type="radio" name="gender" id="female" class="w-5 h-5">
+            <div class="gender flex items-center gap-2">
+              <input type="radio" name="gender" id="female" value="female" class="w-5 h-5">
               <label for="female" class="cursor-pointer text-md">Female</label>
             </div>
           </div>
         </div>
-        <p class="text-xs -mt-4 text-[#94a3b8] font-semibold underline">Why do we need this information?</p>
-
-        
+        <div class="tooltip">
+          <p class="text-sm text-[#94a1a0] font-bold underline cursor-pointer -mt-5" id="tooltip">Why do we need this information?</p>
+        </div>
+        <!-- Hidden -->
         <input type="text" name="dudit_score" value="" id="dudit" class="hidden">
         <input type="text" name="audit_score" value="" id="audit" class="hidden">
+        <input name="d_result_text" id="d_result_text" class="hidden">
+        <input name="a_result_text" id="a_result_text" class="hidden">
+
+
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3_k9UsMvp4OfnIkM0GwpGc9SYkCDf0N2Q5eblmVNoh42AWedYfIL0VvkEV5t713GWBiK7hHXNv" target="_blank" id="submitBtn">
         <button type="submit" class="text-[#fff] text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-1/2 mt-5">Send</button>
+        </a>
       </form>
     </div>
   </main>
+
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 </body>
 </html>
