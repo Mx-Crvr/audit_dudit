@@ -8,17 +8,17 @@
   <script src="./test_logic/dudit.js" defer></script>
 </head>
 <body class="bg-white text-black">
-  <header class="max-w-5xl mx-auto">
+  <header class="px-5 md:px-12 lg:px-16 mx-auto">
     <img src="./imgs/pex-logo.webp" alt="PEx Logo">
   </header>
 
-  <main class="max-w-5xl mx-auto text-lg mb-12">
-    <h1 class="text-4xl font-semibold text-center my-12">Combined DUDIT & AUDIT Test</h1>
+  <main class="px-5 md:px-12 lg:px-16 md:text-lg mb-12">
+    <h1 class="text-2xl lg:text-4xl font-semibold text-center my-6 md:my-12">Combined DUDIT & AUDIT Test</h1>
     
 
-    <div class="container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col gap-5">
-      <h2 class="text-3xl font-semibold underline">Drug Use Disorder Identification Test</h2>
-      <p class="my-3 leading-8">The DUDIT assessment is divided into three sections, each targeting different aspects of drug use. The questions inquire about the frequency of drug use, inability to stop drug use, interference with responsibilities, withdrawal symptoms, engagement in risky situations due to drug use, and more. Each question is assigned a point value based on the response, with higher scores indicating a higher likelihood of a drug use disorder</p>
+    <div class="q-container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col gap-5">
+      <h2 class="text-xl lg:text-3xl font-semibold underline">Drug Use Disorder Identification Test</h2>
+      <p class="my-1 lg:my-3 leading-6 lg:leading-8">The DUDIT assessment is divided into three sections, each targeting different aspects of drug use. The questions inquire about the frequency of drug use, inability to stop drug use, interference with responsibilities, withdrawal symptoms, engagement in risky situations due to drug use, and more. Each question is assigned a point value based on the response, with higher scores indicating a higher likelihood of a drug use disorder</p>
       <!-- Question 1 -->
       <div class="q1">
         <p class="question font-semibold">1. How often do you use drugs other than alcohol?</p>
@@ -303,7 +303,7 @@
 
       <div id="validationMessage" class="text-red font-bold mt-6 text-center hidden">Please answer all the questions</div>
 
-      <button id="proceedBtn" class="text-[#fff] text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-1/2 mx-auto my-6">Proceed to AUDIT</button>
+      <button id="proceedBtn" class="text-[#fff] text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-full md:w-1/2 mx-auto my-2 lg:my-6">Proceed to AUDIT</button>
     </div>
   </main>
 </body>

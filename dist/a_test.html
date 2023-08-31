@@ -8,15 +8,15 @@
   <script src="./test_logic/audit.js" defer></script>
 </head>
 <body class="bg-white text-black">
-  <header class="max-w-5xl mx-auto">
+  <header class="px-5 md:px-12 lg:px-16 ">
     <img src="./imgs/pex-logo.webp" alt="PEx Logo">
   </header>
 
-  <main class="max-w-5xl mx-auto text-lg my-12">
-    <div class="container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col items-start gap-5">
+  <main class="px-5 md:px-12 lg:px-16 md:text-lg mb-12">
+    <div class="q-container bg-[#fff] p-6 shadow-xl rounded-xl flex flex-col items-start gap-5 mt-4 lg:mt-12 ">
       <button class="border border-[#fff] bg-[#fff] text-blue underline text-xl" id="back-btn">< Back</button>
-      <h2 class="text-3xl font-semibold">Alcohol Use Disorder Identification Test</h2>
-      <p class="my-3 leading-8">The AUDIT assessment is divided into two sections. The first section addresses alcohol consumption patterns, including the frequency of drinking and the quantity consumed per occasion. The second section explores alcohol-related problems, such as inability to control drinking, interference with daily responsibilities, and the need for alcohol consumption in the morning to relieve withdrawal symptoms. Each question in the AUDIT is assigned a score, and the total score is used to categorize individuals into different risk levels for alcohol use disorders. Higher scores indicate a higher likelihood of problematic alcohol use.</p>
+      <h2 class="text-xl lg:text-3xl font-semibold underline">Alcohol Use Disorder Identification Test</h2>
+      <p class="my-1 lg:my-3 leading-6 lg:leading-8">The AUDIT assessment is divided into two sections. The first section addresses alcohol consumption patterns, including the frequency of drinking and the quantity consumed per occasion. The second section explores alcohol-related problems, such as inability to control drinking, interference with daily responsibilities, and the need for alcohol consumption in the morning to relieve withdrawal symptoms. Higher scores of the AUDIT indicate a higher likelihood of problematic alcohol use.</p>
       <hr>
       <!-- Question 1 -->
       <div class="q1">
@@ -272,9 +272,9 @@
         </div>
       </div>
 
-      <div id="validationMessage" class="text-red font-bold mt-6 text-center hidden">Please answer all the questions</div>
+      <div id="validationMessage" class="text-red font-bold mt-2 md:mt-6 text-center hidden">Please answer all the questions</div>
 
-      <a href="javascript:void(0);" id="proceedBtn" class="text-[#fff] text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-1/2 mx-auto my-6">Get score</a>
+      <a href="javascript:void(0);" id="proceedBtn" class="text-[#fff] text-lg lg:text-xl bg-darkblue p-2 text-center rounded-lg shadow-lg transition-all hover:bg-blue w-full lg:w-1/2 mx-auto my-2 lg:my-6">Get score</a>
     </div>
   </main>
 </body>
