@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 const app = express();
 const Airtable = require('airtable');
-var base = new Airtable({apiKey: `patE4sOffV7KFAwkv.95262460d74496f4d152921d3c66562d9983126cfa39a32ac105c526a2356ada`}).base(`appuiDCX4ee5hA3tY`);
+var base = new Airtable({apiKey: `${process.env.TOKEN}`}).base(`${process.env.BASE}`);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -57,6 +57,6 @@ app.post('/form', (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log(`Server listening on 3000: http://localhost:3000`)
+  console.log(`Server listening on ${process.env.PORT} : http://localhost:3000`)
 })
 
